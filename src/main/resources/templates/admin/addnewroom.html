@@ -58,6 +58,11 @@
 
                             <input type="text" class="form-control" name="name" required="required"  th:field="*{name}" id="name" placeholder="Input name here">
                         </div>
+                        <div class="col-6 float-end w-40">
+                            <label class="col-sm-3 control-label">Status</label>
+                            <input type="radio" th:field="*{status}" th:value="${true}" th:text="${'Con trong'}">
+                            <input type="radio" th:field="*{status}" th:value="${false}" th:text="${'Khong kha dung'}">
+                        </div>
                     </div>
                 </div> <!-- form-group // -->
                 <div class="form-group">
@@ -65,7 +70,7 @@
                         <div class="col-6 w-40">
                             <label for="quantity" class="col-sm-3 control-label">Room Type</label>
 
-                            <input type="number" class="form-control" name="name" required="required" th:field="*{type}" id="quantity" placeholder="Input quantity here">
+                            <input type="text" class="form-control" name="name" required="required" th:field="*{type}" id="quantity" placeholder="Input room type here">
                         </div>
                         <div class="col-6 w-40">
                             <label for="price" class="col-sm-3 control-label">Room Price</label>
@@ -88,6 +93,11 @@
                             <label for="name" class="col-md-6 control-label">Room Image</label>
 
                             <label class="col-md-6 control-label" for="image">(Jpg/Jpeg/Png)</label> <input type="file" id="image" name="fileimage" required="required">
+                        </div>
+                        <div class="col-6 w-40">
+                            <label for="size" class="col-sm-3 control-label">Room Size</label>
+
+                            <input type="number" class="form-control" name="name" required="required" th:field="*{size}" id="size" placeholder="Input quantity here">
                         </div>
                     </div>
                 </div>

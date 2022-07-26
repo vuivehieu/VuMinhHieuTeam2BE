@@ -17,4 +17,5 @@ public class RoomModel {
     private boolean status;
     private String type;
     private double price;
+    private int size;
 }

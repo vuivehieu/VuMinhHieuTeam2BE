@@ -1,6 +1,7 @@
 package com.example.vuminhhieuteam2be.Controller;
 
 import com.example.vuminhhieuteam2be.DTO.RoomDTO;
+import com.example.vuminhhieuteam2be.Entity.RoomEntity;
 import com.example.vuminhhieuteam2be.Model.RoomModel;
 import com.example.vuminhhieuteam2be.Service.IRoomService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +51,8 @@ public class AdminController {
 
     @GetMapping("/room/edit/{id}")
     public String editRoom(Model model, @PathVariable("id") Long id) {
-        model.addAttribute("room",roomService.getByID(id));
+        RoomEntity room = roomService.getByID(id);
+        model.addAttribute("room",RoomModel.builder().id(room.getId()).name(room.getRoomName()).description(room.getRoomDescription()).image(room.getRoomImage()).status(room.getRoomStatus()).type(room.getRoomType()).price(room.getRoomPrice()).size(room.getRoomSize()).build());
         return "admin/addnewroom";
     }
 
