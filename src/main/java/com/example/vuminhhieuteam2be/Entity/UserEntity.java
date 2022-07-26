@@ -39,7 +39,4 @@ public class UserEntity {
             name = "user_role"
     )
     private Set<RoleEntity> roleSet;
-    @OneToMany(mappedBy = "userEntity", targetEntity = RoomEntity.class, fetch = FetchType.EAGER)
-    private Set<RoomEntity> roomEntitySet;
-
 }

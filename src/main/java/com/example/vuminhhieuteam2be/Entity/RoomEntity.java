@@ -1,8 +1,11 @@
 package com.example.vuminhhieuteam2be.Entity;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -17,24 +20,23 @@ public class RoomEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     @Column(name = "room_name")
-    String room_name;
+    String roomName;
     @Column(name = "room_price")
-    Double room_price;
+    Double roomPrice;
     @Column(name = "room_status")
-    Boolean room_status;
+    Boolean roomStatus;
     @Column(name = "room_description")
-    String room_description;
+    String roomDescription;
     @Column(name = "room_image")
-    String room_image;
+    String roomImage;
     @Column(name = "room_type")
-    String room_type;
+    String roomType;
     @Column(name = "room_size")
-    int room_size;
+    int roomSize;
+    @CreationTimestamp
     @Column(name = "room_created_at")
-    String room_created_at;
+    Date roomCreated_at;
+    @UpdateTimestamp
     @Column(name = "room_updated_at")
-    String room_updated_at;
-    @ManyToOne(targetEntity = UserEntity.class, fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    UserEntity userEntity;
+    Date roomUpdated_at;
 }
